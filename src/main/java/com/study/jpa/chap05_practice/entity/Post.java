@@ -38,10 +38,9 @@ public class Post {
     @UpdateTimestamp
     private LocalDateTime updateDate; // 수정시간
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post", orphanRemoval = true)
     @Builder.Default // 특정 필드를 직접 지정한 값으로 초기화 하는 것을 강제.
     // hashTagsms @builder.default로 초기화해야 널값이 들어가지 않는다.
-
     private List<HashTag> hashTags = new ArrayList<>();
 
     // 양방향 매핑에서 리스트쪽에 데이터를 추가하는 편의 메서드 생성.
