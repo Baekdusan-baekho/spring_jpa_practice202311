@@ -69,6 +69,7 @@ public class PostService {
 
     }
 
+
     private Post getPost(Long id) {
         return postRepository.findById(id)
                 .orElseThrow(
